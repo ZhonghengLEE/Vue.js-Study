@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <login></login>
+</div>
+<script>
+    //如果要定义全局组件, Vue.omponnent('参数一是组件名称',{参数二是个对象})
+
+    //通过对象字面量的形式,定义了一个组件模板对象
+    var login = {
+        template:'<h1>青莲剑歌</h1>'
+    }
+    //通过 Vue.component 把组件模板对象注册为一个全局的Vue组件,同时为这个组件起了一个名称,可以让我们通过标签的形式,在页面中知己引入这个组件
+
+    //Vue.component('mylogin',login)
+
+    //创建Vue实例,得到ViewModel
+var vm = new Vue({
+el: '#app',
+data: {},
+methods: {},
+components:{
+    //'组件名称':组件的模板对象
+
+    //'mylogin': login 如果组件名称与组件的模板对象名称一致,则只需写一个
+    login
+}
+})
+</script>
+</body>
+</html>
